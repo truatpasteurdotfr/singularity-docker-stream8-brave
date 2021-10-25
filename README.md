@@ -1,21 +1,28 @@
 # singularity-docker-stream8-brave
-CentOS Stream 8 (stream8)  container to run brave built from github actions
+brave browser (https://brave.com) container based on CentOS Stream 8 (stream8) docker image
 
+(toy) singularity image produced by github actions [![Singularity build](https://github.com/truatpasteurdotfr/singularity-docker-stream8-brave/actions/workflows/singularity-publish.yml/badge.svg)](https://github.com/truatpasteurdotfr/singularity-docker-stream8-brave/actions/workflows/singularity-publish.yml)
 
-Running without installation:
+Tru <tru@pasteur.fr>
+
+## Why?
+- alternative to singularity-docker-stream8-chrome
+
+## Caveat
+- playground, use at your own risk!
+
+## Running without installation:
 ```
 singularity run  -B /run oras://ghcr.io/truatpasteurdotfr/singularity-docker-stream8-brave:latest
 ```
-Building:
+## Building:
 ```
 sudo singularity build singularity-docker-stream8-brave.sif  Singularity
 ```
-Download and rename:
 ```
-singularity pull --name singularity-docker-stream8-brave.sif oras://ghcr.io/truatpasteurdotfr/singularity-docker-stream8-brave:latest
-```
-Running with a separate $HOME  (here ~/singularity.d/home/singularity-docker-stream8-brave)
+## Running with a separate $HOME 
+(here ~/singularity.d/home/singularity-docker-stream8-brave)
 ```
 mkdir -p  ~/singularity.d/home/singularity-docker-stream8-brave
-singularity run  -B /run  -H ~/singularity.d/home/singularity-docker-stream8-brave singularity-docker-stream8-brave.sif
+singularity run  -B /run  -H ~/singularity.d/home/singularity-docker-stream8-brave oras://ghcr.io/truatpasteurdotfr/singularity-docker-stream8-brave:latest
 ```
