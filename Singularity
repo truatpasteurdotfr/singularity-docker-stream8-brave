@@ -1,5 +1,5 @@
-Bootstrap: docker
-From: quay.io/centos/centos:stream8
+Bootstrap: oras
+From: ghcr.io/truatpasteurdotfr/singularity-docker-stream8-ci:latest
 
 %post
 dnf -y update && dnf -y upgrade
